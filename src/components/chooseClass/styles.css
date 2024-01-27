@@ -1,0 +1,127 @@
+/* Table Styles */
+.table {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cell {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Class Selection Styles */
+.leftRow {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.leftRow .cell {
+  flex: 1;
+  text-align: center;
+}
+
+/* Radio Button Customization */
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+  display: block;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Neon Effect on Bottom Border */
+input[type="radio"]:checked + label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background-color: #00bfff; /* Neon Blue Color */
+  box-shadow: 0 0 10px #00bfff; /* Glowing Effect */
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+/* Stats Display Styles */
+.rightRow {
+  background-color: #e9ecef;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.statsSection,
+.proficienciesSection {
+  margin: 0 10px;
+}
+
+.statsSection h3,
+.proficienciesSection h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.equipmentSection {
+  margin: 0 10px;
+}
+
+.equipmentSection h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+/* Submit Button Styles */
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .leftRow {
+    flex-direction: column;
+  }
+
+  .leftRow .cell {
+    width: 100%; /* Ensures full width on smaller screens */
+  }
+
+  .rightRow {
+    flex-direction: column;
+  }
+
+  .statsSection,
+  .proficienciesSection {
+    width: 100%; /* Full width for each section */
+    margin-bottom: 20px; /* Added some space between the sections */
+  }
+  .equipmentSection {
+    width: 100%; /* Full width for the equipment section */
+    margin-bottom: 20px; /* Added some space below the section */
+  }
+}
