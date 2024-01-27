@@ -35,6 +35,29 @@ export default function ChooseClass() {
       setEquipment(classLookup[battle].equipment);
     }
   }, [battle]);
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    const playerData = {
+      class: {
+        tech,
+        battle,
+        persona,
+      },
+      stats: {
+        lv: 1,
+        strength,
+        agility,
+        intelligence,
+        endurance,
+        luck,
+        charisma,
+        subClass,
+        exp: 0,
+        skills: {},
+      },
+    };
+    localStorage.setItem("player", JSON.stringify(playerData));
+  }
 
   return (
     <form className="table" onSubmit={handleSubmit}>
